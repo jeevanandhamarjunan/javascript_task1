@@ -79,49 +79,49 @@ let data=[
          id:"FED0401",
          name:"Jeeva",
          pic:'image/team-1.jpg',
-         bg:'image/bg.jpg',
+         bg:'url(image/bg.jpg)',
          position:"Front End Developer | Fabevy Technology"
         },
        {
          id:"FED0402",
          name:"Mugilan",
          pic:'image/tm-3.jpg',
-         bg:'image/bg.jpg',
+         bg:'url(image/bg.jpg)',
          position:"Front End Developer | Fabevy Technology"
         },
        {
          id:"FED0403",
          name:"Nivetha",
          pic:'image/tm-4.jpg',
-         bg:'image/bg.jpg',
+         bg:'url(image/bg.jpg)',
          position:"Front End Developer | Fabevy Technology"
         },
        {
          id:"FED0404",
          name:"kalai",
          pic:'image/team-2.jpg',
-         bg:'image/bg.jpg',
+         bg:'url(image/bg.jpg)',
          position:"Front End Developer | Fabevy Technology"
         },
        {
          id:"FED0405",
          name:"Arjun",
          pic:'image/team-5.jpg',
-         bg:'image/bg.jpg',
+         bg:'url(image/bg.jpg)',
          position:"Front End Developer | Fabevy Technology"
         },
        {
          id:"FED0406",
          name:"Revathi",
          pic:'image/team-3.jpg',
-         bg:'image/bg.jpg', 
+         bg:'url(image/bg.jpg)', 
          position:"Front End Developer | Fabevy Technology",
          
         }
 ]
 data.forEach(function(obj,i){
- let boxTag=document.createElement("div");
- let bgTag=document.createElement("img");
+ let boxTag=document.createElement("div"); 
+ let bgTag=document.createElement("div");
  let contentTag=document.createElement("div");
  let titleTag=document.createElement("h4");
  let positionTag=document.createElement("h5");
@@ -135,13 +135,14 @@ data.forEach(function(obj,i){
   bgTag.setAttribute("class","background-image");
   buttonTag.setAttribute("class","button-follow");
   boxTag.setAttribute("id",obj.id);
-  bgTag.src=obj.bg;
   picTag.src=obj.pic;
   titleTag.innerText=obj.name;
   positionTag.innerText=obj.position;
+  bgTag.style.backgroundImage=obj.bg;
   buttonTag.innerText="Follow";
   contentTag.append(titleTag,positionTag,buttonTag);
-  boxTag.append(bgTag,picTag,contentTag);
+  bgTag.append(picTag);
+  boxTag.append(bgTag,contentTag);
   userDataElm.appendChild(boxTag);
 });
 </script> 

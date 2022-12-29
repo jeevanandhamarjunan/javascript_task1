@@ -153,17 +153,14 @@ padding:0 !important;
  justify-content:space-around;
 }
 .photo{
-    position: absolute;
-    top: 25%;
-    transform: translateY(-25%);
-    left: 14px;
     width: 70px;
-    height:70px;
+    height: 70px;
     border-radius: 50%;
+    transform: translate(-18%,90%);
 }
 .background-image{
-    width: 100%;
-    height: 100px;  
+    padding: 32px;
+    background-position: center;
 }
 .box-item{
  position:relative;
