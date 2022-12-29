@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="icons/icofont.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<!-------------head-section------->
+<header class="header-section">
+ <div class="container">
+ <div class="row align-items-center">
+  <div class="col-lg-4 d-flex">
+   <div class="d-flex head-log align-items-center">
+    <i class="icofont-linkedin"></i>
+    <form>
+     <div class="search-header">
+     <span><i class="icofont-search-1"></i><span>
+     <input type="search" placeholder="search" class="search">  
+     </div>
+    </form>
+   </div>
+  </div>
+  <div class="col-lg-5 text-align-right">
+ <ul class="list">
+  <li class="active-before"><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-home"></i><span class="head-list-nav d-block m-0">Home</span></div></a></li>
+  <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-people"></i><span class="head-list-nav d-block m-0">My Network</span></div></a></li> 
+  <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-briefcase"></i><span class="head-list-nav d-block m-0">Jobs</span></div></a></li>
+  <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-ui-messaging"></i><span class="head-list-nav d-block m-0">Messaging</span></div></a></li>
+  <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-notification"></i><span class="head-list-nav d-block m-0">Notifications</span></div></a></li>
+  <li><a href="#" class="text-decoration-none"><div class="text-align-center"><img class="head-img" src="image/team-1.jpg"><span class="head-list-nav d-block m-0">Me <i class="icofont-caret-down"></i></span></div></a></li>
+ </ul> 
+ </div>
+ <div class="col-lg-1">
+    <ul class="list menu">
+    <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-navigation-menu"></i><p class="head-list-nav m-0">Work<i class="icofont-caret-down"></i></p></div></a></li>
+    </ul>
+ </div>
+ </div>
+ </div>
+ </header>
+ <!----------side-nav-section-------->
+ <section class="follow-section">
+  <div class="container">
+   <div class="row">   
+    <div class="col-lg-3">
+     <div class="aside">
+  <div class="side-nav-link">
+    
+
+ </div>
+ </div>
+</div>
+
+<div class="col-lg-8">
+<div class="pending-sec d-flex justify-content-spacebetween align-items-center">
+ <p>No pending invetations</p>
+ <p>Manage</p>
+</div>
+<div class="follow-background">
+<div class="flw-bg-cnt d-flex justify-content-spacebetween align-items-center">
+ <p>Recommented for you</p>
+ <p>See all</p>
+</div>
+  
+<div id="userdata">
+</div> 
+</div>
+</div>
+ </div>
+ </div>
+</section>
+<!-----------------script------------>
+
+<script>
+let  userDataElm=document.getElementById("userdata"); 
+let data=[
+       {
+         id:"FED0401",
+         name:"Jeeva",
+         pic:'image/team-1.jpg',
+         bg:'image/bg.jpg',
+         position:"Front End Developer | Fabevy Technology"
+        },
+       {
+         id:"FED0402",
+         name:"Mugilan",
+         pic:'image/tm-3.jpg',
+         bg:'image/bg.jpg',
+         position:"Front End Developer | Fabevy Technology"
+        },
+       {
+         id:"FED0403",
+         name:"Nivetha",
+         pic:'image/tm-4.jpg',
+         bg:'image/bg.jpg',
+         position:"Front End Developer | Fabevy Technology"
+        },
+       {
+         id:"FED0404",
+         name:"kalai",
+         pic:'image/team-2.jpg',
+         bg:'image/bg.jpg',
+         position:"Front End Developer | Fabevy Technology"
+        },
+       {
+         id:"FED0405",
+         name:"Arjun",
+         pic:'image/team-5.jpg',
+         bg:'image/bg.jpg',
+         position:"Front End Developer | Fabevy Technology"
+        },
+       {
+         id:"FED0406",
+         name:"Revathi",
+         pic:'image/team-3.jpg',
+         bg:'image/bg.jpg', 
+         position:"Front End Developer | Fabevy Technology",
+         
+        }
+]
+data.forEach(function(obj,i){
+ let boxTag=document.createElement("div");
+ let bgTag=document.createElement("img");
+ let contentTag=document.createElement("div");
+ let titleTag=document.createElement("h4");
+ let positionTag=document.createElement("h5");
+ let buttonTag=document.createElement("button");
+ let picTag=document.createElement("img");
+  boxTag.setAttribute("class","box-item");
+  contentTag.setAttribute("class","content-item");
+  titleTag.setAttribute("class","name-log");
+  positionTag.setAttribute("class","position-log");
+  picTag.setAttribute("class","photo");
+  bgTag.setAttribute("class","background-image");
+  buttonTag.setAttribute("class","button-follow");
+  boxTag.setAttribute("id",obj.id);
+  bgTag.src=obj.bg;
+  picTag.src=obj.pic;
+  titleTag.innerText=obj.name;
+  positionTag.innerText=obj.position;
+  buttonTag.innerText="Follow";
+  contentTag.append(titleTag,positionTag,buttonTag);
+  boxTag.append(bgTag,picTag,contentTag);
+  userDataElm.appendChild(boxTag);
+});
+</script> 
+</body>
+</html>
