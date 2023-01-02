@@ -9,7 +9,7 @@
 </head>
 <body>
 <!-------------head-section------->
-<header class="header-section">
+<header class="header-section d-none" id="jeev1">
  <div class="container">
  <div class="row align-items-center">
   <div class="col-lg-4 d-flex">
@@ -24,7 +24,7 @@
    </div>
   </div>
   <div class="col-lg-5 text-align-right">
- <ul class="list">
+ <ul class="list text-align-center">
   <li class="active-before"><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-home"></i><span class="head-list-nav d-block m-0">Home</span></div></a></li>
   <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-people"></i><span class="head-list-nav d-block m-0">My Network</span></div></a></li> 
   <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-briefcase"></i><span class="head-list-nav d-block m-0">Jobs</span></div></a></li>
@@ -33,16 +33,17 @@
   <li><a href="#" class="text-decoration-none"><div class="text-align-center"><img class="head-img" src="image/jeev.jpg"><span class="head-list-nav d-block m-0">Me <i class="icofont-caret-down"></i></span></div></a></li>
  </ul> 
  </div>
- <div class="col-lg-1">
+ <div class="col-lg-2">
     <ul class="list menu">
     <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-navigation-menu"></i><p class="head-list-nav m-0">Work<i class="icofont-caret-down"></i></p></div></a></li>
+    <li><a href="#" class="text-decoration-none" id="logout"><div class="text-align-center"><i class="icofont-logout"></i><p class="head-list-nav m-0">Log out</p></div></a></li>    
     </ul>
  </div>
  </div>
  </div>
  </header>
  <!----------side-nav-section-------->
- <section class="follow-section">
+ <section class="follow-section d-none" id="jeev2">
   <div class="container">
    <div class="row">   
     <div class="col-lg-3">
@@ -50,7 +51,7 @@
   <div class="side-nav-link">
     
 
- </div>
+  </div>
  </div>
 </div>
 
@@ -67,11 +68,63 @@
   
 <div id="userdata">
 </div> 
+
 </div>
 </div>
  </div>
  </div>
 </section>
+<!-------------login-head-section------->
+<section class="login-header-section" id="signin1">
+ <div class="container">
+ <div class="row align-items-center">
+  <div class="col-lg-3 d-flex">
+   <div class="d-flex head-log align-items-center">
+   <a href="#" class="d-block"><img src="image/logo-bg.png" class="linked-in-logo"></a>
+   </div>
+  </div>
+  <div class="col-lg-5 text-align-right">
+ <ul class="list list-login">
+  <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-compass"></i><span class="head-list-nav d-block m-0 margin-top">Discover</span></div></a></li>
+  <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-group"></i><span class="head-list-nav d-block m-0 margin-top">People</span></div></a></li> 
+  <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-video-alt"></i><span class="head-list-nav d-block m-0 margin-top">Learning</span></div></a></li>
+  <li><a href="#" class="text-decoration-none"><div class="text-align-center"><i class="icofont-briefcase"></i><span class="head-list-nav d-block m-0 margin-top">Jobs</span></div></a></li>
+ </ul> 
+ </div>
+ <div class="col-lg-3 ps-0 menu-login">
+    <ul class="list-menu ps-0 d-flex align-items-center">
+     <li class="list-menu-01"><a href="#" class="d-block text-decoration-none">Join now</a></li>       
+     <li class="list-menu-02"><a href="#" class="d-block text-decoration-none">Sign in</a></li>
+    </ul>
+ </div>
+ </div>
+ </div>
+ </section>
+<!------------------------------login-section--------------------->
+<section class="login-section" id="signin2">
+ <div class="container">
+  <div class="row ">
+   <div class="col-lg-6"> 
+    <div class="content">
+     <h1>Welcome to your professional community</h1>
+    </div>    
+   
+   <div class="inputs-data">
+     <input class="user-in-style" type="email" placeholder="E-MAIL ID" id="loginData"><br>
+     <input class="user-in-style" type="password" placeholder="PASSWORD" id="passwordInput"><br>  
+     <a class="forgot-link" href="#">Forgot Password?</a><br>
+     <button class="button-follow-login" type="button" id="add">Sign in</button>
+   </div>
+   </div>
+   <div class="col-lg-5">
+     <div class="log-in-image">
+       <img src="https://static.licdn.com/aero-v1/sc/h/dxf91zhqd2z6b0bwg85ktm5s4">
+     </div>
+   </div>
+  </div>
+ </div>
+</section>
+
 <!-----------------script------------>
 
 <script>
@@ -147,6 +200,49 @@ data.forEach(function(obj,i){
   boxTag.append(bgTag,contentTag);
   userDataElm.appendChild(boxTag);
 });
+
+    let userName=document.getElementById("loginData");
+    let signIn1=document.getElementById("signin1");
+    let signIn2=document.getElementById("signin2");
+    let jeev1Name=document.getElementById("jeev1");   
+    let jeev2Name=document.getElementById("jeev2"); 
+    let passwordTag=document.getElementById("passwordInput");
+    let addInput=document.getElementById("add");
+    addInput.addEventListener("click",function(){
+       var dat=userName.value+" "+passwordTag.value;
+       console.log(dat); 
+       let data=["jeeva@gmail.com jeeva@123","madhu@gmail.com madhu@123"];
+           let c=0;
+          for(let x of data){
+               if(x==dat){
+                c++;
+              }
+            }
+           if(c){
+          jeev1Name.setAttribute("style","display:block");
+          jeev2Name.setAttribute("style","display:block");
+          signIn1.setAttribute("style","display:none");  
+          signIn2.setAttribute("style","display:none");
+            }
+           else{
+          alert("enter valid id");
+}
+                  
+}); 
+
+ let logOut=document.getElementById("logout");
+  logOut.addEventListener("click",function(){
+       
+          jeev1Name.setAttribute("style","display:none");
+          jeev2Name.setAttribute("style","display:none");
+          signIn1.setAttribute("style","display:block");  
+          signIn2.setAttribute("style","display:block");
+          userName.value="";
+          passwordTag.value="";
+          
+});
+  
+ 
 </script> 
 </body>
 </html>
