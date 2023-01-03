@@ -93,7 +93,7 @@
  </div>
  <div class="col-lg-3 ps-0 menu-login">
     <ul class="list-menu ps-0 d-flex align-items-center">
-     <li class="list-menu-01"><a href="#" class="d-block text-decoration-none">Join now</a></li>       
+     <li class="list-menu-01"><a href="#" class="d-block text-decoration-none" id="create">Join now</a></li>       
      <li class="list-menu-02"><a href="#" class="d-block text-decoration-none">Sign in</a></li>
     </ul>
  </div>
@@ -123,6 +123,38 @@
    </div>
   </div>
  </div>
+</section>
+<!----------------create-page------------>
+<section class="create-page-section" id="createchange">
+  <label for="name">First Name:</label>
+  <input type="text" placeholder="First Name" id="username1"><br><br>
+  <label for="lname">Last Name:</label>
+  <input type="text" placeholder="Last Name" id="username2"><br><br>
+
+  <label for=email">Email-Id:</label>
+  <input type="email" placeholder="Email-id" id="emailid"><br><br>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel"" placeholder="633-67-678-75" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}" id="phoneno"><br><br>
+
+  <label for="gender">Gender</label>
+  <input list="gender1" id="gendertype">
+    <datalist id="gender1">
+     <option value="Male">
+     <option value="Female">
+    </datalist>
+    <br><br>
+
+  <label for="dob">Enter a phone number:</label>
+  <input type="date" id="dateofbirth"><br><br>
+
+  <label for="password">Password:</label>
+  <input type="text" placeholder="Password" id="passwordone"><br><br>
+
+  <label for="confirmpassword">Confirm Password:</label>
+  <input type="text" placeholder="Confirm Password" id="passwordtwo"><br><br>
+
+  <input type="submit" value="Submit" id="sub">
 </section>
 
 <!-----------------script------------>
@@ -201,6 +233,7 @@ data.forEach(function(obj,i){
   userDataElm.appendChild(boxTag);
 });
 
+    let createChange=document.getElementById("createchange");  
     let userName=document.getElementById("loginData");
     let signIn1=document.getElementById("signin1");
     let signIn2=document.getElementById("signin2");
@@ -208,12 +241,13 @@ data.forEach(function(obj,i){
     let jeev2Name=document.getElementById("jeev2"); 
     let passwordTag=document.getElementById("passwordInput");
     let addInput=document.getElementById("add");
+    createChange.setAttribute("style","display:none");
+    let dataM=["jeeva@gmail.com jeeva@123","madhu@gmail.com madhu@123"];   
     addInput.addEventListener("click",function(){
        var dat=userName.value+" "+passwordTag.value;
        console.log(dat); 
-       let data=["jeeva@gmail.com jeeva@123","madhu@gmail.com madhu@123"];
            let c=0;
-          for(let x of data){
+          for(let x of dataM){
                if(x==dat){
                 c++;
               }
@@ -223,6 +257,7 @@ data.forEach(function(obj,i){
           jeev2Name.setAttribute("style","display:block");
           signIn1.setAttribute("style","display:none");  
           signIn2.setAttribute("style","display:none");
+          createChange.setAttribute("style","display:none");
             }
            else{
           alert("enter valid id");
@@ -232,7 +267,8 @@ data.forEach(function(obj,i){
 
  let logOut=document.getElementById("logout");
   logOut.addEventListener("click",function(){
-       
+          
+         createChange.setAttribute("style","display:none");
           jeev1Name.setAttribute("style","display:none");
           jeev2Name.setAttribute("style","display:none");
           signIn1.setAttribute("style","display:block");  
@@ -241,7 +277,76 @@ data.forEach(function(obj,i){
           passwordTag.value="";
           
 });
-  
+   let createAcc=document.getElementById("create");
+  createAcc.addEventListener("click",function(){
+                
+          createChange.setAttribute("style","display:block");          
+          jeev1Name.setAttribute("style","display:none");
+          jeev2Name.setAttribute("style","display:none");
+          signIn1.setAttribute("style","display:none");  
+          signIn2.setAttribute("style","display:none");
+
+    let userName1=document.getElementById("username1");
+    let userName2=document.getElementById("username2");    
+    let emailId=document.getElementById("emailid");    
+    let phoneNum=document.getElementById("phoneno");    
+    let genderType=document.getElementById("gendertype");
+    let dateOfBirth=document.getElementById("dateofbirth");
+    let passwordOne=document.getElementById("passwordone");
+    let passwordTwo=document.getElementById("passwordtwo"); 
+    let subInput=document.getElementById("sub");
+       var object1={};
+    subInput.addEventListener("click",function(){
+         let name1=userName1.value;
+         let name2=userName2.value;
+         let email=emailId.value;
+         let phoneNo=phoneNum.value;
+         let gender=genderType.value;
+         let dob=dateOfBirth.value;
+         let passWord1=passwordOne.value;
+         let passWord2=passwordTwo.value;
+        var object1={};
+          object1["name1"]=name1;
+          object1["name2"]=name2;
+          object1["email"]=email;
+          object1["phoneNo"]=phoneNo;
+          object1["gender"]=gender;
+          object1["dob"]=dob;
+          object1["passWord1"]=passWord1;
+          object1["passWord2"]=passWord2;
+        console.log(object1);     
+         userName1.value="";
+         userName2.value="";
+         emailId.value="";
+         phoneNum.value="";
+         genderType.value="";
+         dateOfBirth.value="";
+         passwordOne.value="";
+         passwordTwo.value="";     
+          
+   if(object1.passWord1==object1.passWord2)
+
+    {
+       let checkPass=object1.email+" "+object1.passWord2;
+       dataM.push(checkPass);
+          jeev1Name.setAttribute("style","display:block");
+          jeev2Name.setAttribute("style","display:block");
+          signIn1.setAttribute("style","display:none");  
+          signIn2.setAttribute("style","display:none");
+         createChange.setAttribute("style","display:none");
+}
+
+  else
+{
+
+       alert("password & confirm doesnot match")
+;
+       object1={};
+}
+});
+          
+          
+});
  
 </script> 
 </body>
