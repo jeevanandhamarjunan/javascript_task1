@@ -125,38 +125,42 @@
  </div>
 </section>
 <!----------------create-page------------>
-<section class="create-page-section" id="createchange">
-  <label for="name">First Name:</label>
-  <input type="text" placeholder="First Name" id="username1"><br><br>
-  <label for="lname">Last Name:</label>
-  <input type="text" placeholder="Last Name" id="username2"><br><br>
+<section class="forms" id="createchange">
+ <div class="container">
+  <div class="forms-formats">
+  <h1>Create Account</h1>
+  <label for="name">First Name:</label><br>
+  <input class="style-spacing" type="text" placeholder="First Name" id="username1"><br>
+  <label for="lname">Last Name:</label><br>
+  <input class="style-spacing" type="text" placeholder="Last Name" id="username2"><br>
 
-  <label for=email">Email-Id:</label>
-  <input type="email" placeholder="Email-id" id="emailid"><br><br>
+  <label for=email">Email-Id:</label><br>
+  <input class="style-spacing" type="email" placeholder="Email-id" id="emailid"><br>
 
-  <label for="phone">Phone Number:</label>
-  <input type="tel"" placeholder="633-67-678-75" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}" id="phoneno"><br><br>
+  <label for="phone">Phone Number:</label><br>
+  <input class="style-spacing" type="tel"" placeholder="633-67-678-75" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{2}" id="phoneno"><br>
 
-  <label for="gender">Gender</label>
-  <input list="gender1" id="gendertype">
+  <label for="gender">Gender</label><br>
+  <input class="style-spacing" list="gender1" id="gendertype">
     <datalist id="gender1">
      <option value="Male">
      <option value="Female">
     </datalist>
-    <br><br>
+    <br>
 
-  <label for="dob">Enter a phone number:</label>
-  <input type="date" id="dateofbirth"><br><br>
+  <label for="dob">Enter a phone number:</label><br>
+  <input class="style-spacing" type="date" id="dateofbirth"><br>
 
-  <label for="password">Password:</label>
-  <input type="text" placeholder="Password" id="passwordone"><br><br>
+  <label for="password">Password:</label><br>
+  <input type="text" class="style-spacing" placeholder="Password" id="passwordone"><br>
 
-  <label for="confirmpassword">Confirm Password:</label>
-  <input type="text" placeholder="Confirm Password" id="passwordtwo"><br><br>
+  <label for="confirmpassword">Confirm Password:</label><br>
+  <input class="style-spacing" type="text" placeholder="Confirm Password" id="passwordtwo"><br>
 
-  <input type="submit" value="Submit" id="sub">
+  <input class="style-spacing forms-formats-btn" type="submit" value="Submit" id="sub"><br>
+  </div>
+  </div>
 </section>
-
 <!-----------------script------------>
 
 <script>
