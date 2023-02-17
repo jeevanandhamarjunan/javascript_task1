@@ -258,7 +258,7 @@ padding:0 !important;
 }
 .log-in-image img{
     display: block;
-    width: 100%;
+    width: 116%;
 }
 
 .content h1{
@@ -297,12 +297,19 @@ padding:0 !important;
 .button-follow-login:hover{
   background-color: #1095d1;
 }
+.linked-fixed{
+    position: fixed;
+    font-size: 31px;
+    top: 40px;
+    left: 50px;
+    color: #fff;
+}
 .forms>label{
   font-size:16px;
 }
 .forms{
     text-align: center; 
-    background-image: repeating-linear-gradient(24deg, #201946, transparent 100px);
+    background-color:#144679;;
     padding: 50px 0;
 }
 .style-spacing{

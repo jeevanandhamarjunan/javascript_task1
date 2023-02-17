@@ -127,6 +127,7 @@
 <!----------------create-page------------>
 <section class="forms" id="createchange">
  <div class="container">
+   <div class="linked-fixed">Linked <span>in</span></div>
   <div class="forms-formats">
   <h1>Create Account</h1>
   <label for="name">First Name:</label><br>
@@ -157,7 +158,8 @@
   <label for="confirmpassword">Confirm Password:</label><br>
   <input class="style-spacing" type="text" placeholder="Confirm Password" id="passwordtwo"><br>
 
-  <input class="style-spacing forms-formats-btn" type="submit" value="Submit" id="sub"><br>
+  <input class="style-spacing forms-formats-btn" type="submit" value="Submit" id="sub"><br><br><br>
+  <a href="#" class="text-decoration-none" id="logout1"><div class="text-align-center"><i style="color:#fff;" class="icofont-logout"></i><p class="head-list-nav m-0 " style="color:#fff;">Back</p></div></a>
   </div>
   </div>
 </section>
@@ -268,7 +270,18 @@ data.forEach(function(obj,i){
 }
                   
 }); 
-
+ let logOut1=document.getElementById("logout1");
+  logOut1.addEventListener("click",function(){
+          
+         createChange.setAttribute("style","display:none");
+          jeev1Name.setAttribute("style","display:none");
+          jeev2Name.setAttribute("style","display:none");
+          signIn1.setAttribute("style","display:block");  
+          signIn2.setAttribute("style","display:block");
+          userName.value="";
+          passwordTag.value="";
+          
+});
  let logOut=document.getElementById("logout");
   logOut.addEventListener("click",function(){
           
@@ -328,6 +341,7 @@ data.forEach(function(obj,i){
             value++;
 }
 }
+
   var total=value;
   if(total==8){        
    if(object1.passWord1==object1.passWord2)
@@ -353,7 +367,6 @@ data.forEach(function(obj,i){
 else{
        alert("fill all the details");
 }  
-});
          userName1.value="";
          userName2.value="";
          emailId.value="";
@@ -363,7 +376,8 @@ else{
          passwordOne.value="";
          passwordTwo.value="";     
           
-          
+
+});          
 });
  
 </script> 
